@@ -1,79 +1,27 @@
+@import 'tailwindcss';
+
 @font-face {
-	font-family: "nb";
-	src: url("/public/nb.woff2") format("woff2");
+    font-family: 'nb';
+    src: url('/nb.woff2') format('woff2');
 }
 
-:root {
-	font-family: "nb", sans-serif;
-	background-color: black;
-	color: white;
+@theme {
+    --font-display: 'nb', sans-serif;
+    --color-theme-primary: #000000;
+    --color-theme-secondary: #ffffff;
+    --color-theme-accent: #fb3f02;
+    --animate-flicker: flicker 1s linear infinite alternate;
 }
 
-#app {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 100lvh;
-	width: 100vw;
-}
-
-.top-left {
-	position: absolute;
-	top: 1rem;
-	left: 1rem;
-	font-size: 64px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 1rem;
-}
-
-.top-right {
-	position: absolute;
-	top: 1rem;
-	right: 1rem;
-	font-size: 64px;
-}
-
-.top-left svg {
-	width: 48px;
-	height: 48px;
-}
-
-.bottom-left {
-	position: absolute;
-	bottom: 1rem;
-	left: 1rem;
-	font-size: 64px;
-}
-.bottom-center {
-	position: absolute;
-	bottom: 1rem;
-	right: 1rem;
-	font-size: 64px;
-}
-
-.logo {
-	width: calc(100% - 2rem);
-	max-width: 900px;
-	height: auto;
-}
-
-path:nth-child(6) {
-	animation: flicker 0.75s ease-in-out infinite alternate;
-}
-
-body {
-	overflow: hidden;
+canvas {
+    @apply mix-blend-screen;
 }
 
 @keyframes flicker {
-	0% {
-		fill: #ffffff;
-	}
-	100% {
-		fill: #000000;
-	}
+    0% {
+        fill: #ffffff;
+    }
+    100% {
+        fill: #000000;
+    }
 }
